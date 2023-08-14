@@ -6,7 +6,7 @@ using namespace std;
 int findUnique(vector<int> arr) {
     unordered_map<int, int> unique;
 
-    int ans, arrSize = arr.size();
+    int ans = 0, arrSize = arr.size();
 
     for(int i = 0; i < arrSize; i++) {
         unique[arr[i]]++;
@@ -22,8 +22,7 @@ int findUnique(vector<int> arr) {
 }
 
 int findUnique2(vector<int> arr) {
-    int ans = 0;
-    int arrSize = arr.size();
+    int ans = 0, arrSize = arr.size();
 
     for(int i = 0; i < arrSize; i++) {
         ans = ans ^ arr[i]; // XOR Operation 
