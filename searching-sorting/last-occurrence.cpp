@@ -2,9 +2,9 @@
 #include <vector>
 using namespace std;
 
-int firstOccurence(vector<int> arr, int target) {
+int lastOccurrence(vector<int> arr, int target) {
     int start = 0;
-    int end = arr.size();
+    int end = arr.size() - 1;
     int mid = start + (end - start) / 2;
     int foundPosition = -1;
 
@@ -13,7 +13,7 @@ int firstOccurence(vector<int> arr, int target) {
 
         if(element == target) {
             foundPosition = mid;
-            end = mid - 1;
+            start = mid + 1;    // tricky
         } else if(target < element) {
             end = mid - 1;
         } else {
@@ -29,7 +29,7 @@ int firstOccurence(vector<int> arr, int target) {
 int main() {
     vector<int> arr {1, 3, 4, 4, 4, 4, 6, 6, 7, 7, 9};
 
-    int ans = firstOccurence(arr, 7);
+    int ans = lastOccurrence(arr, 7);
 
     if(ans) {
         cout << "Element found at " << ans << " index";
