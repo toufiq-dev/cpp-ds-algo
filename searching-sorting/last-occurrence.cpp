@@ -5,10 +5,10 @@ using namespace std;
 int lastOccurrence(vector<int> arr, int target) {
     int start = 0;
     int end = arr.size() - 1;
-    int mid = start + (end - start) / 2;
     int foundPosition = -1;
 
     while(start <= end) {
+        int mid = start + (end - start) / 2;
         int element = arr[mid];
 
         if(element == target) {
@@ -31,7 +31,7 @@ int main() {
 
     int ans = lastOccurrence(arr, 7);
 
-    if(ans) {
+    if(ans != -1) {
         cout << "Element found at " << ans << " index";
     } else {
         cout << "Element not found!";
