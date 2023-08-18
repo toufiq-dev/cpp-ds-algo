@@ -17,11 +17,11 @@ int findPeakElement(vector<int> arr) {
         }
     }
 
-    return start;
+    return end;
 }
 
 int main() {
-    vector<int> arr {0, 10, 5, 2};
+    vector<int> arr {0, 1, 2, 5, 4, 2, 1};
 
     int ans = findPeakElement(arr);
 
