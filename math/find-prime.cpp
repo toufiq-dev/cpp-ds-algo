@@ -6,10 +6,14 @@ vector<bool> sieve(int n) {
     // create a sieve array of size N
     vector<bool> prime(n, true);
     prime[0] = prime[1] = false;
+    int ans = 0;
 
-    for(int i = 2; i < n; i++) {
+    for(int i = 2; i * i < n; i++) {
         if(prime[i]) {
-            int j = i * 2;
+            ans++;
+            // int j = i * 2;
+            // optimize
+            int j = i * i;
 
             while(j < n) {
                 prime[j] = false;
@@ -18,6 +22,7 @@ vector<bool> sieve(int n) {
         }
     }
 
+    cout << ans << endl;
     return prime;
 }
 
