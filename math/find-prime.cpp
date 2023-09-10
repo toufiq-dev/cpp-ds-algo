@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 vector<bool> sieve(int n) {
@@ -7,8 +6,9 @@ vector<bool> sieve(int n) {
     vector<bool> prime(n, true);
     prime[0] = prime[1] = false;
     int ans = 0;
+    int sqrtN = sqrt(n);
 
-    for(int i = 2; i * i < n; i++) {
+    for(int i = 2; i < sqrtN; i++) {
         if(prime[i]) {
             ans++;
             // int j = i * 2;
@@ -22,7 +22,7 @@ vector<bool> sieve(int n) {
         }
     }
 
-    cout << ans << endl;
+     cout << ans << endl;
     return prime;
 }
 
