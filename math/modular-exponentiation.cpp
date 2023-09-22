@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long int modularExponentiation (long long int a, long long int b, long long m) {
+long long int modularExponentiation (long long int a, long long int b, long long int m) {
     long long int ans = 1;
 
     while(b > 0) {
         // lsb of even is 0 and odd is 1
-        // performing bitwise and gives the lsb
+        // performing bitwise and(&), gives the lsb
         if(b & 1) {
             ans = (ans * a) % m;
         }

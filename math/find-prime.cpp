@@ -2,28 +2,18 @@
 using namespace std;
 
 vector<bool> sieve(int n) {
-    // create a sieve array of size N
-    vector<bool> prime(n, true);
-    prime[0] = prime[1] = false;
-    int ans = 0;
-    int sqrtN = sqrt(n);
+    vector<bool> isPrime (n + 1, true);
+    isPrime[0] = isPrime[1] = false;
 
-    for(int i = 2; i < sqrtN; i++) {
-        if(prime[i]) {
-            ans++;
-            // int j = i * 2;
-            // optimize
-            int j = i * i;
-
-            while(j < n) {
-                prime[j] = false;
-                j += i;
+    for(int i = 2; i * i <= n; i++) {
+        if(isPrime[i]) {
+            for(int j = i * i; j <= n; j += i) {
+                isPrime[j] = false;
             }
         }
     }
 
-     cout << ans << endl;
-    return prime;
+    return isPrime;
 }
 
 int main() {

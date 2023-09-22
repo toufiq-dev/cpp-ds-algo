@@ -59,12 +59,26 @@ using namespace std;
 //     return 0;
 // }
 
-int main() {
-    int a = 7;
-    int* c = &a;
-    c = c + 3;
+// int main() {
+//     int var = 10;
+//     int* ptr = &var;
+//     *ptr = 20;
 
-    cout << &a << "  " << c << endl;
+//     int** pr = &ptr;
+//     **pr = 30; 
 
-    return 0;
-}
+//     cout << var << endl;
+       // OUTPUT: 30
+
+//     return 0;
+// }
+
+// int main() {
+//     int a = 7;
+//     int* c = &a;
+//     c = c + 3;
+
+//     cout << &a << "  " << c << endl;
+
+//     return 0;
+// }
