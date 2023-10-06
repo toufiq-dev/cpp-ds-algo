@@ -1,5 +1,11 @@
-// if !defined is used to ensure 
-// if we use the bird.h multiple times it will include just once
+/*
+Header Guards (#if !defined... #define... #endif): 
+These lines are used to prevent the content of the header file from being included 
+multiple times in the same compilation unit. 
+It ensures that the code inside the header file is processed only once during compilation. 
+If the identifier BIRD_H is not defined, it defines it and proceeds with the declarations. 
+Otherwise, it skips the content.
+*/
 
 #if !defined(BIRD_H)
 #define BIRD_H
