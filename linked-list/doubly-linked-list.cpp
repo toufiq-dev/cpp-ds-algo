@@ -11,7 +11,7 @@ class Node {
 
     // constructor to initialize data and next pointer 
     Node(int value) : data(value), prev(nullptr), next(nullptr) {}
-}
+};
 
 void printLinkedList(Node* head) {
     Node* current = head;
@@ -36,6 +36,25 @@ int getLength(Node* head) {
     return len;
 }
 
+void insertAtHead(Node* &head, Node* &tail, int data) {
+    if(head == nullptr) {
+        // LL is empty
+        Node* newNode = new Node(data);
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+
+    // step1: create a node
+    Node* newNode = new Node(data);
+    // step2: link the new node to head
+    newNode -> next = head;
+    // step3: link the prev of head to new node
+    head -> prev = newNode;
+    // step4: now newNode is the head in the LL
+    head = newNode;
+}
+
 int main() {
     Node* first = new Node(10);
     Node* second = new Node(20);
@@ -47,7 +66,11 @@ int main() {
     second -> next = third;
     third -> prev = second;
 
-    
+    printLinkedList(first);
+
+    insertAtHead(first, third, 7);
+
+    printLinkedList(first);
 
     return 0;
 }
