@@ -128,9 +128,9 @@ void deleteAtPosition(Node* &head, Node* &tail, int position) {
     // Delete from first position
     if (position == 1) {
         Node* temp = head;
-        head = head->next;
-        head->prev = nullptr;
-        temp->next = nullptr;
+        head = head -> next;
+        head -> prev = nullptr;
+        temp -> next = nullptr;
 
         // Delete temp
         delete temp;
@@ -140,23 +140,23 @@ void deleteAtPosition(Node* &head, Node* &tail, int position) {
     // Find left, curr, right nodes
     int i = 1;
     Node* left = head;
-    while (i < position - 1 && left->next != nullptr) {
-        left = left->next;
+    while (i < position - 1 && left -> next != nullptr) {
+        left = left -> next;
         i++;
-    }
+    } 
 
-    if (left->next == nullptr) {
+    if (left -> next == nullptr) {
         cout << "Position out of range" << endl;
         return;
     }
 
-    Node* curr = left->next;
-    Node* right = curr->next;
+    Node* curr = left -> next;
+    Node* right = curr -> next;
 
     // Update pointers
-    left->next = right;
+    left -> next = right;
     if (right != nullptr) {
-        right->prev = left;
+        right -> prev = left;
     } else {
         // Update the tail if we're deleting the last node
         tail = left;
@@ -192,7 +192,7 @@ int main() {
 
     printLinkedList(first);
 
-    deleteAtPosition(first, third, 7);
+    deleteAtPosition(first, third, 3);
 
     printLinkedList(first);
 
