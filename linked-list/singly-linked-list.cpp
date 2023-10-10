@@ -119,7 +119,6 @@ void insertAtPosition(Node* &head, Node* &tail, int position, int data) {
 
     // step4: 
     prev -> next = newNode;
-
 }
 
 void deleteNode(Node* &head, Node* &tail, int position) {
@@ -225,7 +224,7 @@ int main() {
     insertAtPosition(head, tail, 6, 99);
     printLinkedList(head);
 
-    deleteNode(head, tail, 3);
+    deleteNode(head, tail, 1);
     printLinkedList(head);
 
     return 0;
