@@ -35,8 +35,8 @@ public:
 };
 
 int main() {
-    vector<int> arr = {-1};
-    int k = 1;
+    vector<int> arr = {1, 3, 2, 6, -1, 4, 1, 8, 2};
+    int k = 5;
 
     Solution sln;
     double ans = sln.findMaxAverage(arr, k);
@@ -45,3 +45,8 @@ int main() {
 
     return 0;
 }
+
+/*
+
+
+*/
