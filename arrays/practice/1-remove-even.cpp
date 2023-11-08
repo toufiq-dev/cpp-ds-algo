@@ -5,23 +5,23 @@ using namespace std;
 // TC: Linear, resize is also linear
 // SC: constant
 void removeEven(vector<int> &nums) {
-    int left = 0;
-    int right = nums.size() - 1;
+    int ptr1 = 0;
+    int ptr2 = nums.size() - 1;
 
-    while(left < right) {
-        if(nums[left] & 1) left++;
+    while(ptr1 < ptr2) {
+        if(nums[ptr1] & 1) ptr1++;
         else {
-            if(nums[right] & 1) {
-                swap(nums[right], nums[left]);
-                right--;
-                left++;
+            if(nums[ptr2] & 1) {
+                swap(nums[ptr2], nums[ptr1]);
+                ptr2--;
+                ptr1++;
             } else {
-                right--;
+                ptr2--;
             }
         }
     }
 
-    nums.resize(left);
+    nums.erase(nums.begin() + ptr1, nums.end());
 }
 
 int main() {
@@ -38,6 +38,8 @@ int main() {
 
 
 /*
-
     problem statement: remove even integers from an array
+
+    Intution: Efficiently move even integers to the end of the array 
+    while maintaining the relative order of the odd integers
 */

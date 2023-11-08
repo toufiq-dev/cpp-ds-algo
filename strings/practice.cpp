@@ -1,17 +1,30 @@
 #include <iostream>
-#include <vector>
+#include <string>
+#include <stack>
 using namespace std;
 
+bool isValid(string s) {
+    stack<char> stk;
 
+    for(auto c : s) {
+        if(c == '(') stk.push(c);
+        else if (c == ")") stk.pop();
+        else if (c == '[') stk.push(c);
+        else if (c == ']') stk.pop();
+        else if (c == '{') stk.push(c);
+        else stk.pop();
+    }
 
-int main() {
-    vector<int> arr = {1, 21, 3, 14, 5, 60, 7, 6};
-    int value = 81;
+    if (stk.empty()) return true;
 
-    vector<int> ans = 
+    return false;
 }
 
-/*
+int main() {
+    string s = "()[]{}";
+    auto ans = isValid(s);
 
-    find two numbers that add upto a value 
-*/
+    cout << ans << endl;
+
+    return 0;
+}
