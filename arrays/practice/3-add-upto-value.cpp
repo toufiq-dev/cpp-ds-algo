@@ -1,12 +1,30 @@
 #include <iostream>
+#include <unordered_map>
 #include <vector>
 using namespace std;
 
-vector<int> findTwo (vector<int> nums, int value) {
-    
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> seen;
+
+    for (int i = 0; i < nums.size(); i++) {
+        if (seen.count(target - nums[i])) return {seen[target - nums[i]], i};
+            
+        seen[nums[i]] = i;
+    }
+
+    return {-1, -1};
 }
 
 int main() {
+    vector<int> arr = {1, 21, 3, 14, 5, 60, 7, 6};
+    int value = 81;
+    
+    vector<int> ans = twoSum(arr, value);
+
+    for (auto x : ans) {
+        cout << x << " ";
+    }
+
     return 0;
 }
 
