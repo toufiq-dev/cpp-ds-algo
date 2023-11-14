@@ -10,8 +10,19 @@ class FirstUnique {
 public:
     FirstUnique (vector<int> &nums) {
         for (int i = 0; i < nums.size(); ++i) {
-            mymap[nums[i]]++;
+            ++mymap[nums[i]];
             myqueue.push(nums[i]);
+        }
+
+        // see the map
+        // for (auto x : mymap) {
+        //     cout << x.first << " " << x.second << endl;
+        // }
+
+        // see the queue
+        while (!myqueue.empty()) {
+            cout << myqueue.front() << " ";
+            myqueue.pop();
         }
     }
 
@@ -33,7 +44,7 @@ int main() {
     FirstUnique* f = new FirstUnique(arr);
     f -> add(5);
     f -> add(2);
-    // f -> add(3);
+    f -> add(3);
     int ans = f -> showFirstUnique();
 
     cout << ans;
