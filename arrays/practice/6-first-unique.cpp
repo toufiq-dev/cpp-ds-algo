@@ -5,12 +5,40 @@
 using namespace std;
 
 class FirstUnique {
+    unordered_map<int, int> mymap;
+    queue<int> myqueue;
 public:
+    FirstUnique (vector<int> &nums) {
+        for (int i = 0; i < nums.size(); ++i) {
+            mymap[nums[i]]++;
+            myqueue.push(nums[i]);
+        }
+    }
+
+    int showFirstUnique () {
+        while (!myqueue.empty() && mymap[myqueue.front()] > 1) myqueue.pop();
+        if (myqueue.empty()) return -1;
+        return myqueue.front();
+    }
     
+    void add (int value) {
+        mymap[value]++;
+        if (mymap[value] == 1) myqueue.push(value);
+    }
 };
 
 int main() {
-    vector<int> arr = {6, 2, 3, 6, 3, 5, 2};
+    vector<int> arr = {6, 2, 6, 3, 5, 6};
+
+    FirstUnique* f = new FirstUnique(arr);
+    f -> add(5);
+    f -> add(2);
+    // f -> add(3);
+    int ans = f -> showFirstUnique();
+
+    cout << ans;
+
+    return 0;
 }
 
 /*

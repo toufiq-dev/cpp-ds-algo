@@ -1,30 +1,28 @@
 #include <iostream>
+#include <vector>
 #include <string>
-#include <stack>
 using namespace std;
 
-bool isValid(string s) {
-    stack<char> stk;
-
-    for(auto c : s) {
-        if(c == '(') stk.push(c);
-        else if (c == ")") stk.pop();
-        else if (c == '[') stk.push(c);
-        else if (c == ']') stk.pop();
-        else if (c == '{') stk.push(c);
-        else stk.pop();
+string findReplaceString(string s, vector<int>& indices, vector<string>& sources, vector<string>& targets) {
+  for(int i : indices) {
+    if( s[i]== sources[i]) {
+        s[i] = targets[i];
     }
+  }
 
-    if (stk.empty()) return true;
-
-    return false;
+  return s;
 }
 
 int main() {
-    string s = "()[]{}";
-    auto ans = isValid(s);
+  // s = "abcd", indices = [0, 2], sources = ["a", "cd"], targets = ["eee", "ffff"] ans = "eeebffff"
+  string s = "abcd";
+  vector<int> indices = {0, 2};
+  vector<string> sources = {"a", "cd"};
+  vector<string> targets = {"eee", "ffff"};
 
-    cout << ans << endl;
+  string ans = findReplaceString(s, indices, sources, targets);
 
-    return 0;
+  cout << ans;
+
+  return 0;
 }
