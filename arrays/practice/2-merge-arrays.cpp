@@ -47,6 +47,9 @@ int main() {
 }
 
 /*
-
     merge two sorted arrays into another sorted array
+
+    Intuition: using two pointer approach we traverse the two vectors and compare two 
+    elements from each vector, then put it on a new vector named result. 
+    we traverse the remaining element of two vector(if any) and add them to the result.
 */

@@ -29,6 +29,9 @@ int main() {
 }
 
 /*
-
     Find two numbers that add upto a value
+
+    Intution: take a map and traverse the array, in each iteration check if there is a value which
+    satisfy the condition.
+    store each member of the vector in the map.
 */
