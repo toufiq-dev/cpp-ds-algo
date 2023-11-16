@@ -1,4 +1,18 @@
+#include <iostream>
+#include <vector>
+using namespace std;
 
+
+int main() {
+    vector<int> arr1 = {-1,0,1,2,-1,-4};
+
+    // Solution *sln = new Solution();
+    // sln -> merge(arr1, m, arr2, n);
+
+    for (auto x : arr1) {
+        cout << x << " ";
+    }
+}
 
 /*
     Given an integer array nums, return all the triplets
