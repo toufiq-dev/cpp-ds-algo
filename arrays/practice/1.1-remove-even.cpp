@@ -4,11 +4,11 @@ using namespace std;
 
 // TC: Linear O(|nums|), resize is also linear
 // SC: constant
-void removeEven(vector<int> &nums) {
+void removeEven (vector<int> &nums) {
     int ptr1 = 0, ptr2 = nums.size() - 1;
 
-    while(ptr1 < ptr2) {
-        if(nums[ptr1] & 1) ++ptr1;
+    while (ptr1 < ptr2) {
+        if (nums[ptr1] & 1) ++ptr1;
         else {
             if(nums[ptr2] & 1) {
                 swap(nums[ptr2], nums[ptr1]);
@@ -23,7 +23,7 @@ void removeEven(vector<int> &nums) {
     nums.erase(nums.begin() + ptr1, nums.end());
 }
 
-int main() {
+int main () {
     vector<int> arr = {2, 1, 4, 3, 6, 5, 6, 2};
 
     removeEven(arr);
