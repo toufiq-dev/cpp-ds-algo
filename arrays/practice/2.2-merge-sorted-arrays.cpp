@@ -34,6 +34,8 @@ int main() {
     for (auto x : arr1) {
         cout << x << " ";
     }
+
+    return 0;
 }
 
 
