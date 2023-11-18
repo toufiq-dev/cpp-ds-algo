@@ -5,19 +5,17 @@ using namespace std;
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        // three pointer approach
         int pt1 = m - 1;
         int pt2 = n - 1;
         int mergedIdx = m + n - 1;
 
         while (pt1 >= 0 and pt2 >= 0) {
-            if (nums1[pt1] > nums2[pt2]) {
-                nums1[mergedIdx--] = nums1[pt1--];
-            } else {
-                nums1[mergedIdx--] = nums2[pt2--];
-            }
+            nums1[pt1] > nums2[pt2]
+                ? nums1[mergedIdx--] = nums1[pt1--]
+                : nums1[mergedIdx--] = nums2[pt2--];
         }
 
-        // If there are remaining elements in nums2, copy them to nums1
         while (pt2 >= 0) {
             nums1[mergedIdx--] = nums2[pt2--];
         }
