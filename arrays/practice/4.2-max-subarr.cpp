@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public: 
-    // naive solution
+    // brute force solution
     // int maxSubArray(vector<int> &nums) {
     //     int maxSum = nums[0];
     //     for (int i = 0; i < nums.size(); ++i) {
@@ -17,7 +17,7 @@ public:
     //     }
 
     //     return maxSum;
-    // }
+    // }x
 
     // Observation 1: Every idx could be the final idx
     // Observation 2: the maximum subarray ending at a given index, 
