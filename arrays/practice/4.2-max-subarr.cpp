@@ -19,8 +19,19 @@ public:
     //     return maxSum;
     // }
 
+    // Observation 1: Every idx could be the final idx
+    // Observation 2: the maximum subarray ending at a given index, 
+    // formula from the observation: currentSum = max(0, currentSum) + nums[i], maxSum = first element 
     int maxSubArray(vector<int> &nums) {
-        
+        int maxSum = nums[0];
+        int currentSum = 0;
+
+        for (int i = 0; i < nums.size(); ++i) {
+            currentSum = max(0, currentSum) + nums[i];
+            maxSum = max(maxSum, currentSum);
+        }
+
+        return maxSum;
     }
 };
 
