@@ -4,7 +4,7 @@ using namespace std;
 
 // TC: O(max(|nums1|, |nums2|))
 // SC: constant
-vector<int> mergeArrays (vector<int>& nums1, vector<int>& nums2) {
+vector<int> mergeArrays(vector<int>& nums1, vector<int>& nums2) {
     vector<int> result;
     int i = 0, j = 0;
 

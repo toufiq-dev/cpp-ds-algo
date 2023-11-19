@@ -4,7 +4,7 @@ using namespace std;
 
 // TC: Linear, resize is also linear
 // SC: constant
-void removeOdd (vector<int> &nums) {
+void removeOdd(vector<int> &nums) {
     int pt1 = 0, pt2 = nums.size() - 1;
 
     while (pt1 < pt2) {

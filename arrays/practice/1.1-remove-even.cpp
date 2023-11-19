@@ -4,7 +4,7 @@ using namespace std;
 
 // TC: Linear O(|nums|), resize is also linear
 // SC: constant
-void removeEven (vector<int> &nums) {
+void removeEven(vector<int> &nums) {
     int ptr1 = 0, ptr2 = nums.size() - 1;
 
     while (ptr1 < ptr2) {

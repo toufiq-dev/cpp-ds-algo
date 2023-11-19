@@ -29,7 +29,7 @@ int main() {
     int n = 3;
 
     Solution *sln = new Solution();
-    sln -> merge(arr1, m, arr2, n);
+    sln->merge(arr1, m, arr2, n);
 
     for (auto x : arr1) {
         cout << x << " ";

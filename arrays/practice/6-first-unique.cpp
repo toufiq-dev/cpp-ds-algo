@@ -8,7 +8,7 @@ class FirstUnique {
     unordered_map<int, int> mymap;
     queue<int> myqueue;
 public:
-    FirstUnique (vector<int> &nums) {
+    FirstUnique(vector<int> &nums) {
         for (int i = 0; i < nums.size(); ++i) {
             ++mymap[nums[i]];
             myqueue.push(nums[i]);
@@ -26,13 +26,13 @@ public:
         }
     }
 
-    int showFirstUnique () {
+    int showFirstUnique() {
         while (!myqueue.empty() && mymap[myqueue.front()] > 1) myqueue.pop();
         if (myqueue.empty()) return -1;
         return myqueue.front();
     }
     
-    void add (int value) {
+    void add(int value) {
         mymap[value]++;
         if (mymap[value] == 1) myqueue.push(value);
     }
