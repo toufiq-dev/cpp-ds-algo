@@ -22,16 +22,16 @@ public:
     // Observation 1: Every idx could be the final idx
     // Observation 2: the maximum subarray ending at a given index, 
     // formula from the observation: currentSum = max(0, currentSum) + nums[i], maxSum = first element 
-    int maxSubArray(vector<int> &nums) {
-        int maxSum = nums[0];
-        int currentSum = 0;
+    int maxSubArray(vector<int>& nums) {
+        int currSubarr = nums[0];
+        int maxSubarr = nums[0];
 
-        for (int i = 0; i < nums.size(); ++i) {
-            currentSum = max(0, currentSum) + nums[i];
-            maxSum = max(maxSum, currentSum);
+        for(int i = 1; i < nums.size(); i++) {
+            currSubarr = max(nums[i], currSubarr + nums[i]);
+            maxSubarr = max(maxSubarr, currSubarr);
         }
 
-        return maxSum;
+        return maxSubarr;
     }
 };
 
