@@ -3,25 +3,28 @@
 #include <string>
 using namespace std;
 
-string findReplaceString(string s, vector<int>& indices, vector<string>& sources, vector<string>& targets) {
-  for(int i : indices) {
-    if( s[i]== sources[i]) {
-        s[i] = targets[i];
-    }
+bool isEqual(string s, string l) {
+  int pt1 = 0;
+  int pt2 = 0;
+
+  while(pt1 < s.size() and pt2 < l.size()) {
+    if(s[pt1] == l[pt2])
+      ++pt1, ++pt2;
+    else
+      break;
   }
 
-  return s;
+  if(pt1 == s.size() and pt2 == l.size())
+    return true;
+
+  return false;
 }
 
 int main() {
-  // s = "abcd", indices = [0, 2], sources = ["a", "cd"], targets = ["eee", "ffff"] ans = "eeebffff"
-  string s = "abcd";
-  vector<int> indices = {0, 2};
-  vector<string> sources = {"a", "cd"};
-  vector<string> targets = {"eee", "ffff"};
+  string s = "abcde";
+  string l = "fabcde";
 
-  string ans = findReplaceString(s, indices, sources, targets);
-
+  bool ans = isEqual(s, l);
   cout << ans;
 
   return 0;
