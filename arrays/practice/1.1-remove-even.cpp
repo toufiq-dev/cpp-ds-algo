@@ -10,7 +10,7 @@ void removeEven(vector<int> &nums) {
     while (ptr1 < ptr2) {
         if (nums[ptr1] & 1) ++ptr1;
         else {
-            if(nums[ptr2] & 1) {
+            if (nums[ptr2] & 1) {
                 swap(nums[ptr2], nums[ptr1]);
                 --ptr2, ++ptr1;
             } 

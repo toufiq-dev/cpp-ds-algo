@@ -21,11 +21,16 @@ bool isEqual(string s, string l) {
 }
 
 int main() {
-  string s = "abcde";
-  string l = "fabcde";
+  // string s = "abcde";
+  // string l = "fabcde";
 
-  bool ans = isEqual(s, l);
-  cout << ans;
+  // bool ans = isEqual(s, l);
+  // cout << ans;
 
+  int num;
+  cout << "Enter a number: ";
+  cin >> num;
+  cout << endl;
+  cout << num;
   return 0;
 }
