@@ -1,33 +1,26 @@
-#include<iostream>
-#include<vector>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
-    vector<string> strs = {"flower", "flow", "flight"};
-
-    string prefix = strs[0]; // prefix = "flower"
-
-    for (auto &str : strs) {
-    // Find the longest common prefix of the current string and the prefix.
-        string new_prefix = "";
-
-        for (int i = 0; i < min(prefix.size(), str.size()); i++) {
-            if (prefix[i] == str[i]) {
-                new_prefix += prefix[i];
-            } else {
-                break;
-            }
-        }
-
-        // Update the prefix with the new common prefix.
-        prefix = new_prefix;
+bool compare(string &s1, string &s2) {
+    int i = 0, j = 0;
+    while(i < s1.size() || j < s2.size()) {
+        if(s1[i] != s2[j])
+            return false;
+        
+        ++i;
+        ++j;
     }
 
-    // Return the prefix.
-    string longest_common_prefix = prefix;
+    return true;
+}
 
-    cout << longest_common_prefix << endl;
+int main() {
+    string s1 = "Alice";
+    string s2 = "Alicev";
+    bool ans = compare(s1, s2);
+
+    cout << ans;
 
     return 0;
 }
