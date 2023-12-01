@@ -28,7 +28,10 @@ long long getHash(int L, int R)
     if (L == 0) return pH[R];
     /// pH[R] - (pH[L - 1) * po[R - L + 1])
     long long A = pH[R];
-    long long B = (pH[L - 1] * po[R - L + 1]) % MOD;
+    long long B = pH[L - 1] * po[R - L + 1] > MOD 
+                        ? pH[L - 1] * po[R - L + 1] % MOD 
+                        : pH[L - 1] * po[R - L + 1];
+                        
     return (A - B + MOD) % MOD; /// A < B
 }
 /// -9, -4, 1, 6, 11, 16, 21, 26, ...
