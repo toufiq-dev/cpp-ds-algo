@@ -30,10 +30,10 @@ long long getHash(int L, int R) {
         return pH[R];
     
     long long A = pH[R];
-    long long B = pH[L - 1] * pB[R - L + 1] > MOD 
-                        ? pH[L - 1] * pB[R - L + 1] % MOD 
-                        : pH[L - 1] * pB[R - L + 1];
-                        
+    long long B = pH[L - 1] * pB[R - L + 1] > MOD
+                    ? pH[L - 1] * pB[R - L + 1] % MOD 
+                    : pH[L - 1] * pB[R - L + 1];
+                            
     return (A - B + MOD) % MOD; /// A < B
 }
 
