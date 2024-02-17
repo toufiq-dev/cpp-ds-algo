@@ -2,25 +2,22 @@
 #include <vector>
 using namespace std;
 
-// TC: Linear O(|nums|), resize is also linear
+// TC: Linear O(|nums|), no resize needed
 // SC: constant
 void removeEven(vector<int> &nums) {
-    int ptr1 = 0, ptr2 = nums.size() - 1;
+  int writeIdx = 0; // Stores the index for writing odd numbers
 
-    while (ptr1 < ptr2) {
-        if (nums[ptr1] & 1) ++ptr1;
-        else {
-            if (nums[ptr2] & 1) {
-                swap(nums[ptr2], nums[ptr1]);
-                --ptr2, ++ptr1;
-            } 
-            else {
-                --ptr2;
-            }
-        }
+  for (int i = 0; i < nums.size(); ++i) {
+    if (nums[i] & 1) { // Odd number (LSB is 1)
+      if (writeIdx != i) { // Avoid unnecessary swaps for already odd numbers
+        swap(nums[writeIdx], nums[i]);
+      }
+      ++writeIdx; // Increment write index for next odd number
     }
+  }
 
-    nums.erase(nums.begin() + ptr1, nums.end());
+  // Truncate the array by erasing even numbers at the end
+  nums.erase(nums.begin() + writeIdx, nums.end());
 }
 
 int main () {

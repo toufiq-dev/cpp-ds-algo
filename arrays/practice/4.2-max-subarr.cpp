@@ -5,20 +5,6 @@ using namespace std;
 
 class Solution {
 public: 
-    // brute force solution
-    // int maxSubArray(vector<int> &nums) {
-    //     int maxSum = nums[0];
-    //     for (int i = 0; i < nums.size(); ++i) {
-    //         int currentSum = 0;
-    //         for (int j = i; j < nums.size(); ++j) {
-    //             currentSum += nums[j];
-    //             maxSum = max(maxSum, currentSum);
-    //         }
-    //     }
-
-    //     return maxSum;
-    // }x
-
     // Observation 1: Every idx could be the final idx
     // Observation 2: the maximum subarray ending at a given index, 
     // formula from the observation: currentSum = max(0, currentSum) + nums[i], maxSum = first element 

@@ -34,7 +34,7 @@ vector<int> mergeArrays(vector<int>& nums1, vector<int>& nums2) {
 
 int main() {
     vector<int> arr1 = { 1, 3, 99 };
-    vector<int> arr2 = { 2, 4 };
+    vector<int> arr2 = { 2, 3, 4 };
 
     vector<int> ans = mergeArrays(arr1, arr2);
 
@@ -46,8 +46,6 @@ int main() {
 }
 
 /*
-    merge two sorted arrays into another sorted array
-
     Intuition: using two pointer approach we traverse the two vectors and compare two 
     elements from each vector, then put it on a new vector named result. 
     we traverse the remaining element of two vector(if any) and add them to the result.
