@@ -2,30 +2,24 @@
 #include <vector>
 using namespace std;
 
-int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // Choose the last element as the pivot
-    int i = (low - 1); // Index of smaller element
-
-    for (int j = low; j <= high - 1; j++) {
-        // If the current element is smaller than or equal to the pivot
-        if (arr[j] <= pivot) {
-            i++; // Increment the index of smaller element
-            swap(arr[i], arr[j]); // Swap the elements
+int partition (vector<int>& nums, int L, int R) {
+    int i = L - 1;
+    for (int j = L; j < R; j++) {
+        if (nums[j] < nums[R]) {
+            i++;
+            swap(nums[j], nums[i]);
         }
     }
-    swap(arr[i + 1], arr[high]); // Swap the pivot element with the greater element at i+1
-    return (i + 1); // Return the partition index
+
+    swap(nums[i + 1], nums[R]);
+    return i + 1;
 }
 
-// Function to perform the quicksort
-void quickSort(int arr[], int low, int high) {
-    if (low < high) {
-        // Partition the array
-        int partitionIndex = partition(arr, low, high);
-
-        // Recursively sort the elements before and after the partition
-        quickSort(arr, low, partitionIndex - 1);
-        quickSort(arr, partitionIndex + 1, high);
+void quickSort (vector<int>& nums, int L, int R) {
+    if (L < R) {
+        int pivot = partition(nums, L, R);
+        quickSort(nums, L, pivot - 1);
+        quickSort(nums, pivot + 1, R);
     }
 }
 
