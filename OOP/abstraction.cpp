@@ -32,7 +32,7 @@ public:
 
 int main() {
     Circle c(5.0);
-    cout << "Area: " << c.getArea() << endl;
-    cout << "Perimeter: " << c.getPerimeter() << endl;
+    cout << "Area of circle: " << c.getArea() << endl;
+    cout << "Perimeter of circle: " << c.getPerimeter() << endl;
     c.print();
 }
